@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-22 17:31+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+#: templates/base.html:7 templates/base.html:90
+msgid "Sendaoroi"
+msgstr ""
+
+#: templates/base.html:95
+msgid "Toggle navigation"
+msgstr ""
+
+#: templates/base.html:104
+msgid "Lo que hacemos"
+msgstr ""
+
+#: templates/base.html:108
+msgid "Programa"
+msgstr ""
+
+#: templates/base.html:114
+msgid "Servicios"
+msgstr ""
+
+#: templates/base.html:117
+msgid "Acompañamiento SOCIAL"
+msgstr ""
+
+#: templates/base.html:118
+msgid "Acompañamiento PSICOLÓGICO"
+msgstr ""
+
+#: templates/base.html:119
+msgid "Acompañamiento RESTAURATIVO"
+msgstr ""
+
+#: templates/base.html:120
+msgid "Orientación JURÍDICA"
+msgstr ""
+
+#: templates/base.html:127
+msgid "Actividades"
+msgstr ""
+
+#: templates/base.html:130
+msgid "Esc.Activa INDIVIDUAL"
+msgstr ""
+
+#: templates/base.html:131
+msgid "Esc.Activa COMUNITARIA"
+msgstr ""
+
+#: templates/base.html:132
+msgid "Esc.Activa FAMILIAR"
+msgstr ""
+
+#: templates/base.html:139
+msgid "Beneficiarios"
+msgstr ""
+
+#: templates/base.html:142
+msgid "Personas sin status de víctimas"
+msgstr ""
+
+#: templates/base.html:143
+msgid "Reconocidas legal / Institucionalmente"
+msgstr ""
+
+#: templates/base.html:148
+msgid "Profesionales"
+msgstr ""
+
+#: templates/base.html:152 templates/base.html:179
+msgid "Contactar"
+msgstr ""
+
+#: templates/base.html:170
+msgid "Asociación Sendaoroi"
+msgstr ""
+
+#: templates/base.html:172
+msgid "Todos los derechos reservados"
+msgstr ""
+
+#: templates/base.html:183
+msgid "Política de privacidad"
+msgstr ""
+
+#: templates/home/index.html:15
+msgid "Memoria y dignidad"
+msgstr ""
+
+#: templates/home/index.html:16
+msgid "Acompañamos a víctimas del terrorismo en Euskadi."
+msgstr ""
+
+#: templates/home/index.html:25
+msgid "Apoyo psicológico"
+msgstr ""
+
+#: templates/home/index.html:26
+msgid "Escucha profesional y acompañamiento humano."
+msgstr ""
+
+#: templates/home/index.html:35
+msgid "Justicia y reparación"
+msgstr ""
+
+#: templates/home/index.html:36
+msgid "Orientación jurídica y acompañamiento restaurativo."
+msgstr ""

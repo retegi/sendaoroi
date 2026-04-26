@@ -1,0 +1,292 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+        body {
+    font-family: 'Inter', sans-serif;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- ===================== CAROUSEL ===================== -->
+<div class="container-fluid px-0">
+<div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="{% static 'img/carrusel1.png' %}" class="d-block w-100 carousel-img" alt="">
+      <div class="carousel-caption">
+        <h1>{% trans "Memoria y dignidad" %}</h1>
+        <p>{% trans "Acompañamos a víctimas del terrorismo en Euskadi." %}</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'img/carrusel4.png' %}" class="d-block w-100 carousel-img" alt="">
+      <div class="carousel-caption">
+        <h2>{% trans "Apoyo psicológico" %}</h2>
+        <p>{% trans "Escucha profesional y acompañamiento humano." %}</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'img/carrusel5.png' %}" class="d-block w-100 carousel-img" alt="">
+      <div class="carousel-caption">
+        <h2>{% trans "Justicia y reparación" %}</h2>
+        <p>{% trans "Orientación jurídica y acompañamiento restaurativo." %}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<!-- ===================== QUE HACEMOS ===================== -->
+<section class="container-fluid bg-sendaoroi1 text-white py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">{% trans "¿Qué hacemos?" %}</h2>
+    <p class="lead">
+      {% trans "Ofrecemos atención integral a víctimas del terrorismo en Euskadi (Gipuzkoa, Bizkaia y Araba), brindando acompañamiento profesional y humano en cada etapa del proceso de recuperación. Nuestro apoyo está dirigido a cualquier persona afectada por actos terroristas, con independencia de la ideología política del agresor o de la propia víctima, desde un enfoque plenamente humanitario, neutral y centrado en la dignidad y el bienestar de cada persona." %}
+    </p>
+  </div>
+</section>
+
+<div class="container my-5">
+  <div class="p-4 p-md-5 rounded-4 bg-sendaoroi4 border">
+    <div class="d-flex flex-column flex-md-row align-items-start gap-3">
+      <div class="flex-shrink-0">
+        <div class="rounded-circle bg-sendaoroi2 d-inline-flex align-items-center justify-content-center"
+             style="width:56px;height:56px;">
+          <span class="fw-bold text-white">i</span>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-sendaoroi1">
+          {% trans "¿Qué significa ser víctima del terrorismo?" %}
+        </h2>
+
+        <p class="lead mb-4 text-sendaoroi5">
+          {% trans "Víctima del terrorismo es..." %}
+        </p>
+
+        <ul class="list-unstyled mb-0">
+          <li class="d-flex gap-2 mb-2">
+            <span class="text-sendaoroi2 fw-bold">•</span>
+            <span>{% trans "Quien sufre directamente la agresión." %}</span>
+          </li>
+          <li class="d-flex gap-2 mb-2">
+            <span class="text-sendaoroi2 fw-bold">•</span>
+            <span>{% trans "La familia de la persona que sufre la agresión." %}</span>
+          </li>
+          <li class="d-flex gap-2">
+            <span class="text-sendaoroi2 fw-bold">•</span>
+            <span>{% trans "El entorno social de quien sufre la agresión." %}</span>
+          </li>
+        </ul>
+
+        <hr class="my-4">
+
+        <p class="mb-0">
+          <span class="fw-semibold text-sendaoroi1">{% trans "Importante:" %}</span>
+          {% trans "No sólo es víctima quien sufre la agresión. El impacto puede extenderse a familiares y al entorno." %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== SERVICIOS ===================== -->
+<div class="w-100 bg-sendaoroi1">
+<section class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="text-white">{% trans "Nuestros servicios" %}</h2>
+  </div>
+
+  <div class="row g-4">
+
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 border-0 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="text-sendaoroi2">{% trans "Acompañamiento social" %}</h5>
+          <p>{% trans "Apoyo en gestiones sociales, recursos públicos y acompañamiento institucional." %}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 border-0 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="text-sendaoroi2">{% trans "Acompañamiento psicológico o psiquiátrico" %}</h5>
+          <p>{% trans "Atención especializada para afrontar el trauma y mejorar el bienestar emocional." %}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 border-0 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="text-sendaoroi2">{% trans "Acompañamiento restaurativo" %}</h5>
+          <p>{% trans "Procesos restaurativos orientados a la reparación y reconstrucción personal." %}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 border-0 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="text-sendaoroi2">{% trans "Orientación jurídica" %}</h5>
+          <p>{% trans "Asesoramiento legal especializado en derechos de víctimas." %}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+
+<!-- ===================== PROCESO ===================== -->
+<section class="container-fluid bg-sendaoroi2 py-5">
+  <div class="container text-center">
+    <h2 class="text-white mb-5">{% trans "Nuestro proceso" %}</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="p-4 bg-white">
+          <h5 class="text-sendaoroi2">{% trans "1. Contacto" %}</h5>
+          <p>{% trans "La persona se pone en contacto con nuestra asociación." %}</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 bg-white">
+          <h5 class="text-sendaoroi2">{% trans "2. Entrevista" %}</h5>
+          <p>{% trans "Se realiza una entrevista para conocer la situación y necesidades." %}</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 bg-white">
+        <div class="p-4">
+          <h5 class="text-sendaoroi2">{% trans "3. Información y asesoramiento" %}</h5>
+          <p>{% trans "Se informa sobre los servicios disponibles y se orienta hacia el más adecuado." %}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 bg-white">
+        <div class="p-4">
+          <h5 class="text-sendaoroi2">{% trans "4. Acompañamiento especializado" %}</h5>
+          <p>{% trans "Se activa el servicio correspondiente según cada caso." %}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 bg-white">
+        <div class="p-4">
+          <h5 class="text-sendaoroi2">{% trans "5. Mejora del bienestar" %}</h5>
+          <p>{% trans "Trabajamos para que la persona recupere o mejore su bienestar integral." %}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+
+      <img class="w-100" src="{% static 'img/sendaoroi-infograma.png' %}">
+      </div>
+    </div>
+    <div class="col-6">
+
+    </div>
+</div>
+
+<div class="container py-5 text-center bg-white">
+
+    <h2 class="fw-bold mb-4" style="color:#1D3557;">
+        Servicio en todo Euskadi
+    </h2>
+
+    <p class="lead mb-4" style="color:#457B9D; max-width:800px; margin:auto;">
+        Sendaoroi ofrece servicio y acompañamiento a víctimas en todo el territorio de Euskadi,
+        incluyendo Gipuzkoa, Bizkaia y Araba.
+    </p>
+
+    <div class="d-flex justify-content-center">
+        <img src="{% static 'img/mapa_euskadi_sendaoroi.png' %}"
+             alt="Mapa de Euskadi - Gipuzkoa, Bizkaia y Araba"
+             class="img-fluid rounded shadow-sm"
+             style="max-width:600px;">
+    </div>
+
+</div>
+
+<!-- ===================== CONTACTO ===================== -->
+<section class="container py-5 pl-5 pr-5 bg-sendaoroi4">
+  <div class="row g-5">
+
+    <div class="col-md-6">
+      <h2 class="text-sendaoroi1">{% trans "Contactar" %}</h2>
+      <form>
+        <div class="mb-3">
+          <label class="form-label">{% trans "Nombre" %}</label>
+          <input type="text" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">{% trans "Email" %}</label>
+          <input type="email" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">{% trans "Mensaje" %}</label>
+          <textarea class="form-control" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn bg-sendaoroi2 text-white">
+          {% trans "Enviar mensaje" %}
+        </button>
+      </form>
+    </div>
+
+    <!-- ===================== MAPA ===================== -->
+    <div class="col-md-6">
+      <h2 class="text-sendaoroi1">{% trans "Localización" %}</h2>
+      <div id="map" style="height:350px;"></div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+var map = L.map('map').setView([43.3183, -1.9812], 13);  // Ejemplo Donostia
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+L.marker([43.3183, -1.9812]).addTo(map)
+    .bindPopup("Sendaoroi")
+    .openPopup();
+</script>
+
+{% endblock %}
