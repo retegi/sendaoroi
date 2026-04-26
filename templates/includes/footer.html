@@ -1,0 +1,34 @@
+{% load i18n static %}
+<footer class="bg-sendaoroi5 text-white mt-auto pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5>{% trans "Sendaoroi" %}</h5>
+        <p class="small mb-0">
+          {% trans "Asociación dedicada al acompañamiento integral de víctimas del terrorismo en Euskadi." %}
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h6>{% trans "Enlaces" %}</h6>
+        <ul class="list-unstyled small mb-0">
+          <li><a class="text-light text-decoration-none" href="{% url 'home' %}">{% trans "Inicio" %}</a></li>
+          <li><a class="text-light text-decoration-none" href="{% url 'team:list' %}">{% trans "Grupo de trabajo" %}</a></li>
+          <li><a class="text-light text-decoration-none" href="{% url 'faq:list' %}">{% trans "Preguntas frecuentes" %}</a></li>
+          <li><a class="text-light text-decoration-none" href="/#contactar">{% trans "Contactar" %}</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 text-md-end">
+        <h6>{% trans "Proyecto subvencionado por" %}</h6>
+        <img src="{% static 'img/eusko-jaurlaritza.png' %}" alt="{% trans 'Eusko Jaurlaritza' %}" class="img-fluid mt-2" style="max-height: 70px;">
+      </div>
+    </div>
+
+    <hr class="border-light mt-4">
+
+    <div class="text-center small">
+      &copy; {% now "Y" %} {% trans "Sendaoroi" %} - {% trans "Todos los derechos reservados" %}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<section class="container py-5">
+  <h1 class="mb-4">{% trans "Preguntas frecuentes" %}</h1>
+
+  <div class="accordion" id="faqAccordion">
+    {% for faq in faqs %}
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading-{{ faq.id }}">
+          <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ faq.id }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="collapse-{{ faq.id }}">
+            {{ faq.question }}
+            {% if faq.category %}
+              <span class="badge text-bg-secondary ms-2">{{ faq.category }}</span>
+            {% endif %}
+          </button>
+        </h2>
+        <div id="collapse-{{ faq.id }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading-{{ faq.id }}" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">{{ faq.answer|safe }}</div>
+        </div>
+      </div>
+    {% empty %}
+      <div class="alert alert-light border mb-0">{% trans "No hay preguntas frecuentes publicadas todavía." %}</div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

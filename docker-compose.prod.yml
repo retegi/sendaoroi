@@ -1,0 +1,15 @@
+services:
+  web:
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    ports:
+      - "127.0.0.1:8050:8000"
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+      - sqlite_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  static_volume:
+  media_volume:
+  sqlite_data:

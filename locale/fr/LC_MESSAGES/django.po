@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-22 17:31+0100\n"
+"POT-Creation-Date: 2026-04-26 17:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,110 +17,304 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: templates/base.html:7 templates/base.html:90
+
+#: applications/faq/models.py:19
+msgid "FAQ"
+msgstr ""
+
+#: applications/faq/models.py:20
+msgid "FAQs"
+msgstr ""
+
+#: applications/home/models.py:37 applications/home/models.py:38
+#: applications/home/models.py:41
+msgid "Home content"
+msgstr ""
+
+#: applications/navigation/models.py:12
+msgid "Page"
+msgstr ""
+
+#: applications/navigation/models.py:13
+msgid "Internal URL"
+msgstr ""
+
+#: applications/navigation/models.py:14
+msgid "Anchor"
+msgstr ""
+
+#: applications/navigation/models.py:15
+msgid "External URL"
+msgstr ""
+
+#: applications/navigation/models.py:46
+msgid "Menu item"
+msgstr ""
+
+#: applications/navigation/models.py:47
+msgid "Menu items"
+msgstr ""
+
+#: applications/pages/models.py:32
+msgid "Editable page"
+msgstr ""
+
+#: applications/pages/models.py:33
+msgid "Editable pages"
+msgstr ""
+
+#: applications/team/models.py:11
+msgid "Person"
+msgstr ""
+
+#: applications/team/models.py:12
+msgid "Entity"
+msgstr ""
+
+#: applications/team/models.py:18
+msgid "Own member"
+msgstr ""
+
+#: applications/team/models.py:19
+msgid "External member"
+msgstr ""
+
+#: applications/team/models.py:47
+msgid "Collaborator"
+msgstr ""
+
+#: applications/team/models.py:48
+msgid "Collaborators"
+msgstr ""
+
+#: templates/base.html:8 templates/includes/footer.html:6
+#: templates/includes/footer.html:31 templates/includes/navbar.html:4
 msgid "Sendaoroi"
 msgstr ""
 
-#: templates/base.html:95
-msgid "Toggle navigation"
+#: templates/base.html:9
+msgid "Sendaoroi.org - Iniciativa social de acompañamiento y memoria."
 msgstr ""
 
-#: templates/base.html:104
-msgid "Lo que hacemos"
+#: templates/base.html:54
+msgid "Horario"
 msgstr ""
 
-#: templates/base.html:108
-msgid "Programa"
+#: templates/base.html:55
+msgid "Días"
 msgstr ""
 
-#: templates/base.html:114
-msgid "Servicios"
+#: templates/base.html:55
+msgid "Lunes, Miércoles y Viernes"
 msgstr ""
 
-#: templates/base.html:117
-msgid "Acompañamiento SOCIAL"
+#: templates/base.html:56
+msgid "Contacto"
 msgstr ""
 
-#: templates/base.html:118
-msgid "Acompañamiento PSICOLÓGICO"
+#: templates/faq/list.html:6 templates/home/index.html:117
+#: templates/includes/footer.html:17 templates/includes/navbar.html:40
+msgid "Preguntas frecuentes"
 msgstr ""
 
-#: templates/base.html:119
-msgid "Acompañamiento RESTAURATIVO"
+#: templates/faq/list.html:24
+msgid "No hay preguntas frecuentes publicadas todavía."
 msgstr ""
 
-#: templates/base.html:120
-msgid "Orientación JURÍDICA"
+#: templates/home/index.html:9
+msgid "Imagen principal de Sendaoroi"
 msgstr ""
 
-#: templates/base.html:127
-msgid "Actividades"
-msgstr ""
-
-#: templates/base.html:130
-msgid "Esc.Activa INDIVIDUAL"
-msgstr ""
-
-#: templates/base.html:131
-msgid "Esc.Activa COMUNITARIA"
-msgstr ""
-
-#: templates/base.html:132
-msgid "Esc.Activa FAMILIAR"
-msgstr ""
-
-#: templates/base.html:139
-msgid "Beneficiarios"
-msgstr ""
-
-#: templates/base.html:142
-msgid "Personas sin status de víctimas"
-msgstr ""
-
-#: templates/base.html:143
-msgid "Reconocidas legal / Institucionalmente"
-msgstr ""
-
-#: templates/base.html:148
-msgid "Profesionales"
-msgstr ""
-
-#: templates/base.html:152 templates/base.html:179
-msgid "Contactar"
-msgstr ""
-
-#: templates/base.html:170
-msgid "Asociación Sendaoroi"
-msgstr ""
-
-#: templates/base.html:172
-msgid "Todos los derechos reservados"
-msgstr ""
-
-#: templates/base.html:183
-msgid "Política de privacidad"
-msgstr ""
-
-#: templates/home/index.html:15
+#: templates/home/index.html:14
 msgid "Memoria y dignidad"
 msgstr ""
 
-#: templates/home/index.html:16
+#: templates/home/index.html:20
 msgid "Acompañamos a víctimas del terrorismo en Euskadi."
 msgstr ""
 
 #: templates/home/index.html:25
-msgid "Apoyo psicológico"
+msgid "Acompañamiento psicológico"
 msgstr ""
 
-#: templates/home/index.html:26
-msgid "Escucha profesional y acompañamiento humano."
-msgstr ""
-
-#: templates/home/index.html:35
+#: templates/home/index.html:28
 msgid "Justicia y reparación"
 msgstr ""
 
-#: templates/home/index.html:36
-msgid "Orientación jurídica y acompañamiento restaurativo."
+#: templates/home/index.html:39
+msgid "¿Qué hacemos?"
+msgstr ""
+
+#: templates/home/index.html:46
+msgid ""
+"Ofrecemos atención integral a víctimas del terrorismo en Euskadi, brindando "
+"acompañamiento profesional y humano en cada etapa del proceso de "
+"recuperación."
+msgstr ""
+
+#: templates/home/index.html:58
+msgid "Nuestro proceso"
+msgstr ""
+
+#: templates/home/index.html:65
+msgid ""
+"Escuchamos, evaluamos y acompañamos de forma personalizada para impulsar el "
+"bienestar integral de cada persona."
+msgstr ""
+
+#: templates/home/index.html:70
+msgid "Infograma del proceso de Sendaoroi"
+msgstr ""
+
+#: templates/home/index.html:80
+msgid "Nuestros servicios"
+msgstr ""
+
+#: templates/home/index.html:87
+msgid ""
+"Acompañamiento social, psicológico, restaurativo y orientación jurídica para "
+"víctimas y entorno cercano."
+msgstr ""
+
+#: templates/home/index.html:100 templates/includes/footer.html:16
+#: templates/includes/navbar.html:39 templates/team/list.html:7
+msgid "Grupo de trabajo"
+msgstr ""
+
+#: templates/home/index.html:106
+msgid ""
+"Conoce a las personas y entidades que hacen posible el acompañamiento "
+"integral de Sendaoroi."
+msgstr ""
+
+#: templates/home/index.html:109
+msgid "Ver grupo de trabajo"
+msgstr ""
+
+#: templates/home/index.html:123
+msgid ""
+"Respondemos dudas habituales sobre el acompañamiento y los recursos "
+"disponibles."
+msgstr ""
+
+#: templates/home/index.html:126
+msgid "Ver todas las preguntas y respuestas"
+msgstr ""
+
+#: templates/home/index.html:146
+msgid "Todavía no hay preguntas frecuentes destacadas."
+msgstr ""
+
+#: templates/home/index.html:158 templates/includes/footer.html:18
+#: templates/includes/navbar.html:41
+msgid "Contactar"
+msgstr ""
+
+#: templates/home/index.html:164
+msgid ""
+"Si necesitas información o acompañamiento, escríbenos y te responderemos lo "
+"antes posible."
+msgstr ""
+
+#: templates/home/index.html:168
+msgid "Correo"
+msgstr ""
+
+#: templates/home/index.html:169 templates/team/detail.html:29
+#: templates/team/list.html:55
+msgid "Teléfono"
+msgstr ""
+
+#: templates/home/index.html:173
+msgid "Localización"
+msgstr ""
+
+#: templates/home/index.html:175
+msgid "Mapa de localización"
+msgstr ""
+
+#: templates/includes/footer.html:8
+msgid ""
+"Asociación dedicada al acompañamiento integral de víctimas del terrorismo en "
+"Euskadi."
+msgstr ""
+
+#: templates/includes/footer.html:13
+msgid "Enlaces"
+msgstr ""
+
+#: templates/includes/footer.html:15
+msgid "Inicio"
+msgstr ""
+
+#: templates/includes/footer.html:23
+msgid "Proyecto subvencionado por"
+msgstr ""
+
+#: templates/includes/footer.html:24
+msgid "Eusko Jaurlaritza"
+msgstr ""
+
+#: templates/includes/footer.html:31
+msgid "Todos los derechos reservados"
+msgstr ""
+
+#: templates/includes/navbar.html:7
+msgid "Toggle navigation"
+msgstr ""
+
+#: templates/pages/detail.html:24
+msgid "Página padre"
+msgstr ""
+
+#: templates/team/detail.html:18 templates/team/list.html:45
+msgid "Rol"
+msgstr ""
+
+#: templates/team/detail.html:28 templates/team/list.html:54
+msgid "Email"
+msgstr ""
+
+#: templates/team/detail.html:30 templates/team/list.html:59
+msgid "Web"
+msgstr ""
+
+#: templates/team/detail.html:37
+msgid "Volver al grupo de trabajo"
+msgstr ""
+
+#: templates/team/list.html:12
+msgid "Tipo"
+msgstr ""
+
+#: templates/team/list.html:13
+msgid "Persona"
+msgstr ""
+
+#: templates/team/list.html:14
+msgid "Entidad"
+msgstr ""
+
+#: templates/team/list.html:19
+msgid "Nivel"
+msgstr ""
+
+#: templates/team/list.html:20
+msgid "Miembro propio"
+msgstr ""
+
+#: templates/team/list.html:21
+msgid "Miembro externo"
+msgstr ""
+
+#: templates/team/list.html:25
+msgid "Filtrar"
+msgstr ""
+
+#: templates/team/list.html:66
+msgid "Ver detalle"
+msgstr ""
+
+#: templates/team/list.html:73
+msgid "No hay colaboradores activos para los filtros seleccionados."
 msgstr ""

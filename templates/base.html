@@ -1,254 +1,71 @@
 {% load i18n static %}
+{% get_current_language as LANGUAGE_CODE %}
 <!doctype html>
-<html lang="es">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{% trans "Sendaoroi" %}{% endblock %}</title>
+  <title>{% block title %}{% if page and page.seo_title %}{{ page.seo_title }}{% elif home_content and home_content.seo_title %}{{ home_content.seo_title }}{% else %}{% trans "Sendaoroi" %}{% endif %}{% endblock %}</title>
+  <meta name="description" content="{% if page and page.seo_description %}{{ page.seo_description }}{% elif home_content and home_content.seo_description %}{{ home_content.seo_description }}{% else %}{% trans 'Sendaoroi.org - Iniciativa social de acompañamiento y memoria.' %}{% endif %}">
 
-  <!-- Bootstrap 5 (CDN) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   {% block head %}{% endblock %}
-    <style>
-      body {
-    font-family: 'Inter', sans-serif;
-}
 
-    .bg-sendaoroi1{
-        background-color:#1F4E79;
-        }
-    .bg-sendaoroi1:hover{
-        background-color:#1F4E79;
-        }
-    .text-sendaoroi1{
-        color:#1F4E79;
-        }
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
 
-    .bg-sendaoroi2{
-        background-color:#2A9D8F;
-        }
-    .bg-sendaoroi2:hover{
-        background-color:#2A9D8F;
-        }
-    .text-sendaoroi2{
-        color:#2A9D8F;
-        }
+    .bg-sendaoroi1 { background-color: #1F4E79; }
+    .text-sendaoroi1 { color: #1F4E79; }
+    .bg-sendaoroi2 { background-color: #2A9D8F; }
+    .text-sendaoroi2 { color: #2A9D8F; }
+    .bg-sendaoroi3 { background-color: #E9C46A; }
+    .text-sendaoroi3 { color: #E9C46A; }
+    .bg-sendaoroi4 { background-color: #F6F7FB; }
+    .text-sendaoroi4 { color: #F6F7FB; }
+    .bg-sendaoroi5 { background-color: #1F2937; }
+    .text-sendaoroi5 { color: #1F2937; }
 
-    .bg-sendaoroi3{
-        background-color:#E9C46A;
-        }
-    .bg-sendaoroi3:hover{
-        background-color:#E9C46A;
-        }
-    .text-sendaoroi3{
-        color:#E9C46A;
-        }
+    .carousel-img {
+      min-height: 280px;
+      max-height: 60vh;
+      object-fit: cover;
+    }
 
-    .bg-sendaoroi4{
-        background-color:#F6F7FB;
-        }
-    .bg-sendaoroi4:hover{
-        background-color:#F6F7FB;
-        }
-    .text-sendaoroi4{
-        color:#F6F7FB;
-        }
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 8px;
+      padding: 1rem;
+    }
 
-    .bg-sendaoroi5{
-        background-color:#1F2937;
-        }
-    .bg-sendaoroi5:hover{
-        background-color:#1F2937;
-        }
-    .text-sendaoroi5{
-        color:#1F2937;
-        }
-
-.carousel-img {
-    height: 60vh;        /* altura del carrusel */
-    object-fit: cover;   /* recorta sin deformar */
-}
-
-.carousel-caption {
-    background: rgba(0, 0, 0, 0.45);
-    padding: 20px;
-    border-radius: 8px;
-}
-      .navbar .nav-link:hover {
-    opacity: 0.85;
-}
-    </style>
-
-
+    .navbar .nav-link:hover {
+      opacity: 0.85;
+    }
+  </style>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100">
-<div class="bg-sendaoroi1">
-    <div class="container text-white p-3">
-        <label class="mr-5">Ordutegia: <b>9:00 - 15:00, Astelehena, Asteazkena eta Ostirala</b></label> | <label class="">Kontaktua: <b>+34 6546 54 654</b></label> | <label><b>info@sendaoroi.org</b></label>
+  <div class="bg-sendaoroi1">
+    <div class="container text-white py-2 small d-flex flex-column flex-lg-row gap-1 gap-lg-3">
+      <span>{% trans "Horario" %}: <strong>9:00 - 15:00</strong></span>
+      <span>{% trans "Días" %}: <strong>{% trans "Lunes, Miércoles y Viernes" %}</strong></span>
+      <span>{% trans "Contacto" %}: <strong>info@sendaoroi.org</strong></span>
     </div>
-</div>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-sendaoroi2">
-    <div class="container">
-      <!-- Brand -->
-      <a class="navbar-brand fw-semibold" href="{% url 'home' %}">
-        {% trans "Sendaoroi" %}
-      </a>
+  </div>
 
-      <!-- Mobile toggle -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-              aria-controls="mainNavbar" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  {% include "includes/navbar.html" %}
 
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-1">
-
-           <li class="nav-item">
-            <a class="nav-link" href="#">{% trans "Lo que hacemos" %}</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">{% trans "Programa" %}</a>
-          </li>
-
-          <!-- Servicios -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {% trans "Servicios" %}
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">{% trans "Acompañamiento SOCIAL" %}</a></li>
-              <li><a class="dropdown-item" href="#">{% trans "Acompañamiento PSICOLÓGICO" %}</a></li>
-              <li><a class="dropdown-item" href="#">{% trans "Acompañamiento RESTAURATIVO" %}</a></li>
-              <li><a class="dropdown-item" href="#">{% trans "Orientación JURÍDICA" %}</a></li>
-            </ul>
-          </li>
-
-          <!-- Actividades -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {% trans "Actividades" %}
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">{% trans "Esc.Activa INDIVIDUAL" %}</a></li>
-              <li><a class="dropdown-item" href="#">{% trans "Esc.Activa COMUNITARIA" %}</a></li>
-              <li><a class="dropdown-item" href="#">{% trans "Esc.Activa FAMILIAR" %}</a></li>
-            </ul>
-          </li>
-
-          <!-- Beneficiarios -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {% trans "Beneficiarios" %}
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">{% trans "Personas sin status de víctimas" %}</a></li>
-              <li><a class="dropdown-item" href="#">{% trans "Reconocidas legal / Institucionalmente" %}</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">{% trans "Profesionales" %}</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">{% trans "Contactar" %}</a>
-          </li>
-
-        </ul>
-        <!-- Selector idioma Bootstrap -->
-<div class="dropdown ms-3">
-  <button class="btn btn-outline-light btn-sm dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false">
-    {% get_current_language as LANGUAGE_CODE %}
-    {{ LANGUAGE_CODE|upper }}
-  </button>
-
-  <ul class="dropdown-menu dropdown-menu-end">
-    {% get_available_languages as LANGUAGES %}
-    {% for lang in LANGUAGES %}
-    <li>
-      <form action="{% url 'set_language' %}" method="post">
-        {% csrf_token %}
-        <input type="hidden" name="language" value="{{ lang.0 }}">
-        <button type="submit"
-                class="dropdown-item {% if lang.0 == LANGUAGE_CODE %}active{% endif %}">
-          {{ lang.1 }}
-        </button>
-      </form>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main content -->
   <main>
     {% block content %}{% endblock %}
   </main>
 
-  <!-- Footer -->
-<footer class="bg-sendaoroi5 text-white mt-auto pt-5 pb-3">
-  <div class="container">
+  {% include "includes/footer.html" %}
 
-    <div class="row g-4">
-
-      <!-- Información -->
-      <div class="col-md-4">
-        <h5>{% trans "Sendaoroi" %}</h5>
-        <p class="small">
-          {% trans "Asociación dedicada al acompañamiento integral de víctimas del terrorismo en Euskadi." %}
-        </p>
-      </div>
-
-      <!-- Enlaces -->
-      <div class="col-md-4">
-        <h6>{% trans "Enlaces" %}</h6>
-        <ul class="list-unstyled small">
-          <li><a href="#" class="text-decoration-none text-light">{% trans "Programa" %}</a></li>
-          <li><a href="#" class="text-decoration-none text-light">{% trans "Servicios" %}</a></li>
-          <li><a href="#" class="text-decoration-none text-light">{% trans "Contactar" %}</a></li>
-          <li><a href="#" class="text-decoration-none text-light">{% trans "Política de privacidad" %}</a></li>
-        </ul>
-      </div>
-
-      <!-- Patrocinador -->
-      <div class="col-md-4 text-md-end">
-        <h6>{% trans "Proyecto subvencionado por" %}</h6>
-        <img src="{% static 'img/eusko-jaurlaritza.png' %}"
-             alt="Eusko Jaurlaritza"
-             class="img-fluid mt-2"
-             style="max-height:70px;">
-      </div>
-
-    </div>
-
-    <hr class="border-light mt-4">
-
-    <div class="text-center small">
-      © {% now "Y" %} Sendaoroi —
-      {% trans "Todos los derechos reservados" %}
-    </div>
-
-  </div>
-</footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-          crossorigin="anonymous"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   {% block scripts %}{% endblock %}
 </body>
 </html>

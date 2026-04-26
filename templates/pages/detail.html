@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9">
+      <article class="bg-white border rounded p-4 p-md-5">
+        <header class="mb-4">
+          <h1 class="mb-3">{{ page.title }}</h1>
+          {% if page.summary %}
+            <p class="lead mb-0">{{ page.summary }}</p>
+          {% endif %}
+        </header>
+
+        {% if page.featured_image %}
+          <img src="{{ page.featured_image.url }}" class="img-fluid rounded mb-4" alt="{{ page.title }}">
+        {% endif %}
+
+        <div>{{ page.content|safe }}</div>
+
+        {% if page.parent %}
+          <div class="mt-4 small text-muted">
+            {% trans "Página padre" %}: <a href="{{ page.parent.get_absolute_url }}">{{ page.parent.title }}</a>
+          </div>
+        {% endif %}
+      </article>
+    </div>
+  </div>
+</section>
+{% endblock %}

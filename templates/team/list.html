@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<section class="container py-5">
+  <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+    <h1 class="mb-0">{% trans "Grupo de trabajo" %}</h1>
+
+    <form method="get" class="row g-2 align-items-center">
+      <div class="col-auto">
+        <select class="form-select" name="type">
+          <option value="">{% trans "Tipo" %}</option>
+          <option value="person" {% if request.GET.type == 'person' %}selected{% endif %}>{% trans "Persona" %}</option>
+          <option value="entity" {% if request.GET.type == 'entity' %}selected{% endif %}>{% trans "Entidad" %}</option>
+        </select>
+      </div>
+      <div class="col-auto">
+        <select class="form-select" name="membership">
+          <option value="">{% trans "Nivel" %}</option>
+          <option value="own_member" {% if request.GET.membership == 'own_member' %}selected{% endif %}>{% trans "Miembro propio" %}</option>
+          <option value="external_member" {% if request.GET.membership == 'external_member' %}selected{% endif %}>{% trans "Miembro externo" %}</option>
+        </select>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-secondary" type="submit">{% trans "Filtrar" %}</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="row g-4">
+    {% for collaborator in collaborators %}
+      <div class="col-12 col-md-6">
+        <article class="card h-100 shadow-sm border-0">
+          {% if collaborator.photo %}
+            <img src="{{ collaborator.photo.url }}" class="card-img-top" alt="{{ collaborator.name }}" style="height: 260px; object-fit: cover;">
+          {% endif %}
+
+          <div class="card-body d-flex flex-column">
+            <h2 class="h5 card-title mb-1">{{ collaborator.name }}</h2>
+            <p class="small text-muted mb-2">
+              {{ collaborator.get_collaborator_type_display }} | {{ collaborator.get_membership_type_display }}
+            </p>
+
+            {% if collaborator.role %}
+              <p class="mb-2"><strong>{% trans "Rol" %}:</strong> {{ collaborator.role }}</p>
+            {% endif %}
+
+            {% if collaborator.short_description %}
+              <p class="card-text">{{ collaborator.short_description }}</p>
+            {% endif %}
+
+            <div class="mt-auto">
+              <div class="d-flex flex-wrap gap-2 small">
+                {% if collaborator.email %}<span><strong>{% trans "Email" %}:</strong> {{ collaborator.email }}</span>{% endif %}
+                {% if collaborator.phone %}<span><strong>{% trans "Teléfono" %}:</strong> {{ collaborator.phone }}</span>{% endif %}
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                {% if collaborator.website_url %}<a class="btn btn-sm btn-outline-secondary" href="{{ collaborator.website_url }}" target="_blank" rel="noopener">{% trans "Web" %}</a>{% endif %}
+                {% if collaborator.linkedin_url %}<a class="btn btn-sm btn-outline-secondary" href="{{ collaborator.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+                {% if collaborator.instagram_url %}<a class="btn btn-sm btn-outline-secondary" href="{{ collaborator.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+                {% if collaborator.facebook_url %}<a class="btn btn-sm btn-outline-secondary" href="{{ collaborator.facebook_url }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
+                {% if collaborator.x_url %}<a class="btn btn-sm btn-outline-secondary" href="{{ collaborator.x_url }}" target="_blank" rel="noopener">X</a>{% endif %}
+              </div>
+
+              <a class="btn btn-link px-0 mt-2" href="{{ collaborator.get_absolute_url }}">{% trans "Ver detalle" %}</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    {% empty %}
+      <div class="col-12">
+        <div class="alert alert-light border mb-0">{% trans "No hay colaboradores activos para los filtros seleccionados." %}</div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
