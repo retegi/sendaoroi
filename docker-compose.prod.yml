@@ -4,7 +4,7 @@ services:
     ports:
       - "127.0.0.1:8050:8000"
     volumes:
-      - static_volume:/app/staticfiles
-      - media_volume:/app/media
-      - sqlite_data:/app/data
+      - ./deploy-data/staticfiles:/app/staticfiles
+      - ./deploy-data/media:/app/media
+      - ./deploy-data/data:/app/data
     restart: unless-stopped
