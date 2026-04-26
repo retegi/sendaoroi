@@ -8,8 +8,3 @@ services:
       - media_volume:/app/media
       - sqlite_data:/app/data
     restart: unless-stopped
-
-volumes:
-  static_volume:
-  media_volume:
-  sqlite_data:
